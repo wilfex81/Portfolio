@@ -62,6 +62,24 @@ p {
 	color: white;
 	background-color: crimson;
 }
+.cta--2 {
+	display: inline-block;
+	vertical-align: top;
+	padding: 5px 15px;
+	color: white;
+	background-color: transparent;
+	border: 1px solid crimson;
+	font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	margin-top: 20px;
+	transition: 0.3s ease;
+	transition-property: background-color, color;
+}
+.cta--2:hover {
+	color: white;
+	background-color: crimson;
+}
 .brand h1 {
 	font-size: 3rem;
 	text-transform: uppercase;
@@ -200,7 +218,7 @@ p {
 
 /* Hero Section */
 #hero {
-	background-image: url(./img/hero-bg.png);
+	background-image: url(/static/images/hero-bg.png);
 	background-size: cover;
 	background-position: top center;
 	position: relative;
