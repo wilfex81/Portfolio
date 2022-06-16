@@ -62,12 +62,15 @@ p {
 	color: white;
 	background-color: crimson;
 }
-.cta--2 {
-	display: inline-block;
-	vertical-align: top;
+.button--a{
+	display: flex;
+	gap: 2em;
+	border-radius: 50px;
+}
+.button{
 	padding: 5px 15px;
 	color: white;
-	background-color: transparent;
+	background-color: rgb(137, 137, 238);
 	border: 1px solid crimson;
 	font-size: 2rem;
 	text-transform: uppercase;
@@ -75,8 +78,9 @@ p {
 	margin-top: 20px;
 	transition: 0.3s ease;
 	transition-property: background-color, color;
+	border-radius: 50px;
 }
-.cta--2:hover {
+.button:hover {
 	color: white;
 	background-color: crimson;
 }
@@ -260,6 +264,9 @@ p {
 	animation: text_reveal_name 0.5s ease forwards;
 	animation-delay: 3s;
 }
+#hero h1:nth-child(4) {
+	animation-delay: 3.5s;
+}
 #hero h1 span {
 	position: absolute;
 	top: 0;
@@ -278,6 +285,9 @@ p {
 }
 #hero h1:nth-child(3) span {
 	animation-delay: 2.5s;
+}
+#hero h1:nth-child(4) span {
+	animation-delay: 3.5s;
 }
 
 /* End Hero Section */
