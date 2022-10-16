@@ -14,8 +14,10 @@ class Service(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=120)
     description = models.TextField()
-    live_server = models.CharField(blank=True, max_length=120)
-    github = models.CharField(blank=True, max_length=120)
+    github_name = models.CharField(blank= True, max_length=120 )
+    liver_server_name = models.CharField(blank= True, max_length= 120)
+    live_server = models.URLField(blank=True, max_length=120)
+    github = models.URLField(blank=True, max_length=120)
     image = models.ImageField()
 
     def __str__(self):

@@ -23,8 +23,8 @@
           </div>
           <ul>
             <li><a href="#hero" data-after="Home">Home</a></li>
-            <li><a href="#services" data-after="Service">Services</a></li>
-            <li><a href="{% url 'projects' %}" data-after="Projects">Projects</a></li>
+            <!-- <li><a href="#services" data-after="Service">Services</a></li> -->
+            <li><a href="#projects" data-after="Projects">Projects</a></li>
             <li><a href="#about" data-after="About">About</a></li>
             <li><a href="#contact" data-after="Contact">Contact</a></li>
           </ul>
@@ -42,14 +42,14 @@
         <h1>Hello, <span></span></h1>
         <h1>My Name is <span></span></h1>
         <h1>Wilfex <span></span></h1>
-        <h1>A Software Developer <span></span></h1>
+        <h1>A Software Engineer <span></span></h1>
         <a href="#projects" type="button" class="cta">Portfolio</a>
       </div>
     </div>
   </section>
   <!-- End Hero Section  -->
   <!-- Service Section -->
-  <section id="services">
+  <!-- <section id="services">
     <div class="services container">
       <div class="service-top">
         <h1 class="section-title">Serv<span>i</span>ces</h1>
@@ -67,7 +67,7 @@
         {% endfor %}
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- End Service Section -->
 
   <!-- Projects Section -->
@@ -85,10 +85,10 @@
             <p>{{ projects.description }}</p>
             <div class="button--a">
               <div class="button">
-                <a href="https://github.com/wilfex81">{{ projects.github|lower }}</a>
+                <a href="{{ projects.github }}" target="_blank" rel="noopener noreferrer" class="btn text-dark see-project bg-light border">{{ projects.github_name }}<i class="fa fa-github"></i></a>
               </div>
               <div class="button">
-                <a href="https://www.linkedin.com/in/wilfex">{{ projects.live_server|lower }}</a>
+                <a href="{{ projects.live_server }}" target="_blank" rel="noopener noreferrer" class="btn text-dark see-project bg-light border"><i class="fa fa-github"></i>{{ projects.liver_server_name}}</a>
               </div>
             </div>
           </div>
@@ -109,7 +109,7 @@
       {% for abouts in abouts %}
       <div class="col-left">
         <div class="about-img">
-          <img src="{% static '/images/sourcecode.jpg' %}" alt="img">
+          <img src="{% static '/images/me.jpg' %}" alt="img">
         </div>
       </div>
       <div class="col-right">
@@ -117,7 +117,8 @@
         <h2>{{abouts.title}}</h2>
         <p>{{abouts.description}}</p>
         <!-- <button  class="cta"><a>{{abouts.resume}}</a>Download Resume</button> -->
-        <a href="#" class="cta">{{abouts.resume}}</a>
+        <a href="/images/wilfex_kipchirchir_cv.pdf" download= "cv" class="cta">{{abouts.resume}}</a>
+        </a>
       </div>
       {% endfor %}
     </div>
@@ -171,7 +172,7 @@
       <h2>{{footer.title}}</h2>
       <div class="social-icon">
         <div class="social-item">
-          <a href="www.linkedin.com/in/wilfex "><img
+          <a href="{{ footer.social_contacts }}" target="_blank" ><img
               src="https://img.icons8.com/bubbles/50/undefined/linkedin.png" /></a>
         </div>
       </div>
