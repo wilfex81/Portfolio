@@ -3,12 +3,14 @@ import os
 from django.http import HttpResponseRedirect
 from django.http.response import HttpResponse
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
 
 
 from core.models import About, Contact, Footer, Project, Service
 
 
 #HomePage
+csrf_exempt 
 def home(request):
     services = Service.objects.all()
     projects = Project.objects.all()
@@ -18,7 +20,8 @@ def home(request):
     context = {'projects': projects, 'services': services, 
             'abouts': abouts,'contacts': contacts, 'footer': footer}
     return render(request, 'index.html', context)
-
+    
+csrf_exempt
 def download_file(request):
     # Define Django project base directory
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
