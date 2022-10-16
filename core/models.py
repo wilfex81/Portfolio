@@ -1,5 +1,4 @@
 from django.db import models
-from phonenumber_field.modelfields import PhoneNumberField
 
 #Service models
 class Service(models.Model):
@@ -35,7 +34,7 @@ class About(models.Model):
 
 #contact models
 class Contact(models.Model):
-    phone = PhoneNumberField(null=False, blank=False, unique=True)
+    phone = models.CharField(null=False, blank=False, unique=True, max_length = 128)
     address = models.CharField(("address"), max_length=128)
     email = models.EmailField(max_length=254)
 
