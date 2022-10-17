@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-%ptk(a7z$#$xibzr7+9k7#d$0s0y97mcg7etwzb@jbewhgpxbs
 DEBUG = True
 
 ALLOWED_HOSTS = ['web-production-405a.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-405a.up.railway.app']
 
 
 # Application definition
@@ -47,7 +48,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware', #Csrf Middleware is added
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',

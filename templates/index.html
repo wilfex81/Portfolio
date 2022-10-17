@@ -93,7 +93,7 @@
             </div>
           </div>
           <div class="project-img">
-            <img src="{% static '/images/sourcecode.jpg' %}" alt="img">
+            <img src="{{projects.image}}" alt="img">
           </div>
         </div>
         {% endfor %}
@@ -109,7 +109,7 @@
       {% for abouts in abouts %}
       <div class="col-left">
         <div class="about-img">
-          <img src="{% static '/images/me.jpg' %}" alt="img">
+          <img src="{{abouts.image}}" alt="img">
         </div>
       </div>
       <div class="col-right">
