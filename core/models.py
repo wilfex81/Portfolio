@@ -17,7 +17,7 @@ class Project(models.Model):
     liver_server_name = models.CharField(blank= True, max_length= 120)
     live_server = models.URLField(blank=True, max_length=120)
     github = models.URLField(blank=True, max_length=120)
-    image = models.ImageField()
+    image = models.ImageField(upload_to='images/')
 
     def __str__(self):
         return self.name
@@ -26,8 +26,9 @@ class Project(models.Model):
 class About(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField()
-    resume = models.FileField(max_length=254)
-    image = models.ImageField()
+    resume = models.FileField(max_length=254, upload_to='documents/')
+    image = models.ImageField(upload_to='images/')
+    resume_name = models.CharField(max_length = 100)
 
     def __str__(self):
         return self.title
@@ -44,7 +45,9 @@ class Contact(models.Model):
 #footer models
 class Footer(models.Model):
     title = models.CharField(max_length=150)
-    social_contacts = models.URLField(blank=True)
+    linkedIn = models.URLField(blank=True)
+    whatsapp = models.URLField(blank=True)
+    twiter = models.URLField(blank=True)
 
     def __str__(self):
         return self.title

@@ -1,7 +1,7 @@
 import mimetypes
 import os
-from django.http import HttpResponseRedirect
-from django.http.response import HttpResponse
+from django.conf import settings
+from django.http import HttpResponse, Http404
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 
@@ -22,25 +22,12 @@ def home(request):
     return render(request, 'index.html', context)
     
 csrf_exempt
-def download_file(request):
-    # Define Django project base directory
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    # Define text file name
-    filename = 'cv.pdf'
-    # Define the full file path
-    filepath = BASE_DIR + '/filedownload/Files/' + filename
-    # Open the file for reading content
-    path = open(filepath, 'r')
-    # Set the mime type
-    mime_type, _ = mimetypes.guess_type(filepath)
-    # Set the return value of the HttpResponse
-    response = HttpResponse(path, content_type=mime_type)
-    # Set the HTTP header for sending to browser
-    response['Content-Disposition'] = "attachment; filename=%s" % filename
-    # Return the response value
-    return response
-
-# def projects(request):
-#         projects = Project.objects.all()
-#         context = {'projects': projects}
-#         return render(request, 'index.html', context)
+def download(request, path):
+    # get the download path
+    download_path = os.path.join(settings.MEDIA_ROOT, path)
+    if os.path.exists(download_path):
+        with open(download_path, 'rb') as fh:
+            response = HttpResponse(fh.read(), content_type="application/resume")
+            response['Content-Disposition'] = 'inline; filename=' + os.path.basename(download_path)
+            return response
+    raise Http404

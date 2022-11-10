@@ -93,7 +93,7 @@
             </div>
           </div>
           <div class="project-img">
-            <img src="{% static '/images/sourcecode.jpg' %}" alt="img">
+            <img src="{{ projects.image }}" alt="img">
           </div>
         </div>
         {% endfor %}
@@ -109,7 +109,7 @@
       {% for abouts in abouts %}
       <div class="col-left">
         <div class="about-img">
-          <img src="{% static '/images/me.jpg' %}" alt="img">
+          <img src="{{ abouts.image }}"  alt="img">
         </div>
       </div>
       <div class="col-right">
@@ -117,7 +117,7 @@
         <h2>{{abouts.title}}</h2>
         <p>{{abouts.description}}</p>
         <!-- <button  class="cta"><a>{{abouts.resume}}</a>Download Resume</button> -->
-        <a href="/images/wilfex_kipchirchir_cv.pdf" download= "cv" class="cta">{{abouts.resume}}</a>
+         <a href="{{ abouts.resume.url }}"  download="{{ abouts.resume.url }}" class="cta">{{abouts.resume_name}}</a>
         </a>
       </div>
       {% endfor %}
@@ -172,8 +172,12 @@
       <h2>{{footer.title}}</h2>
       <div class="social-icon">
         <div class="social-item">
-          <a href="{{ footer.social_contacts }}" target="_blank" ><img
+          <a href="{{ footer.linkedin}}" target="_blank" ><img
               src="https://img.icons8.com/bubbles/50/undefined/linkedin.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="{{ footer.whatsapp }}" target="_blank" ><img
+              src="https://img.icons8.com/bubbles/50/undefined/whatsapp.png" /></a>
         </div>
       </div>
       <p>Copyright © 2022 Wilfex. All rights reserved</p>
