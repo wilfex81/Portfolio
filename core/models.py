@@ -17,7 +17,7 @@ class Project(models.Model):
     liver_server_name = models.CharField(blank= True, max_length= 120)
     live_server = models.URLField(blank=True, max_length=120)
     github = models.URLField(blank=True, max_length=120)
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='media/')
 
     def __str__(self):
         return self.name
