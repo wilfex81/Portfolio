@@ -38,6 +38,10 @@ class Contact(models.Model):
     phone = models.CharField(null=False, blank=False, unique=True, max_length = 128)
     address = models.CharField(("address"), max_length=128)
     email = models.EmailField(max_length=254)
+    linkedIn = models.URLField(blank=True)
+    whatsapp = models.URLField(blank=True)
+    linkedin_name = models.CharField(max_length=100, blank=True, null=True)
+    whatsapp_name = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return self.address
