@@ -37,7 +37,7 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Author**
 
-- GitHub: [@wilfex1](https://github.com/wilfex81)
+- GitHub: [@wilfex81](https://github.com/wilfex81)
 
 ## 🤝 Contributing
 
